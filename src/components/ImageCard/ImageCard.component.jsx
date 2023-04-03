@@ -1,5 +1,5 @@
-import styles from "./image_card.module.scss";
-import Like from "./Like.component";
+import Like from "../Like/Like.component";
+import styles from "./imageCard.module.scss";
 
 const ImageCard = ({ image }) => {
   console.log(image);

@@ -1,6 +1,6 @@
-import data from '../store/db.json';
-import ImageCard from './ImageCard.component';
-import styles from './images_list.module.scss';
+import data from "../../store/db.json";
+import ImageCard from "../ImageCard/ImageCard.component";
+import styles from "./imagesList.module.scss";
 
 const ImagesList = () => {
   return (

@@ -1,13 +1,23 @@
-import ImagesList from "./components/ImagesList.component";
-import NavigationBar from "./components/NavigationBar.component";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Home from "./pages/Home.page";
+import Layout from "./pages/Layout.page";
 
 function App() {
-  return (
-    <>
-      <NavigationBar />
-      <ImagesList />
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

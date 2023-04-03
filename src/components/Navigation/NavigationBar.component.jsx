@@ -1,5 +1,5 @@
-import logo from "../assets/logo.svg";
-import styles from "./navigation_bar.module.scss";
+import logo from "../../assets/logo.svg";
+import styles from "./navigationBar.module.scss";
 
 const NavigationBar = () => {
   return (
