@@ -1,8 +1,12 @@
+import ImagesList from "./components/ImagesList.component";
+import NavigationBar from "./components/NavigationBar.component";
+
 function App() {
   return (
-    <div>
-      <p>Hello</p>
-    </div>
+    <>
+      <NavigationBar />
+      <ImagesList />
+    </>
   );
 }
 

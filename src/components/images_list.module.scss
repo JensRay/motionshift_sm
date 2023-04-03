@@ -1,0 +1,16 @@
+.main_container {
+  margin: 0 auto;
+  width: 1200px;
+  // background-color: red;
+
+  .images_list {
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    // grid-template-rows: auto;
+    grid-auto-rows: 500px 500px;
+    column-gap: 20px;
+    row-gap: 15px;
+  }
+}
