@@ -1,16 +1,19 @@
+@import "../../utilities/variables";
+
 .main_container {
-  margin: 0 auto;
-  width: 1200px;
-  // background-color: red;
+  background-color: $light_blue;
+  padding: 40px 0;
 
-  .images_list {
-    // justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  .list_container {
+    margin: 0 auto;
+    width: 1200px;
 
-    // grid-template-rows: auto;
-    grid-auto-rows: 500px 500px;
-    column-gap: 20px;
-    row-gap: 15px;
+    .images_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: 500px 500px;
+      column-gap: 20px;
+      row-gap: 15px;
+    }
   }
 }

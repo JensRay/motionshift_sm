@@ -1,0 +1,8 @@
+@import "./utilities/variables";
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: $navy_blue;
+  }
+}

@@ -1,3 +1,47 @@
+@import "../../utilities/variables";
+
 .navigation_container {
   display: flex;
+  height: 80px;
+  padding: 0 120px;
+  color: $navy_blue;
+  align-items: center;
+  border-bottom: 1px solid $gray_blue;
+
+  .logo {
+    width: 150px;
+    align-self: center;
+    margin-right: 20px;
+    img {
+      vertical-align: text-top;
+    }
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+
+  .links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .tabs {
+      display: flex;
+      justify-content: space-evenly;
+      width: 200px;
+    }
+
+    .cta {
+      align-self: center;
+      background-color: $navy_blue;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 7px;
+
+      h3 {
+        margin: 0;
+      }
+    }
+  }
 }
