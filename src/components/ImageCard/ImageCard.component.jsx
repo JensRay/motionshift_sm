@@ -1,20 +1,22 @@
 import Like from "../Like/Like.component";
-import styles from "./imageCard.module.scss";
+import {
+  Author,
+  CardData,
+  CardFooter,
+  ImageCardContainer,
+} from "./imageCard.styles";
 
 const ImageCard = ({ image }) => {
   console.log(image);
   return (
-    <div
-      style={{ backgroundImage: `url(${image.url})` }}
-      className={styles.image_card}
-    >
-      <div className={styles.card_footer}>
-        <div>
-          <div className={styles.author}>{image.photographer}</div>
+    <ImageCardContainer image={image}>
+      <CardFooter>
+        <CardData>
+          <Author>{image.photographer}</Author>
           <Like />
-        </div>
-      </div>
-    </div>
+        </CardData>
+      </CardFooter>
+    </ImageCardContainer>
   );
 };
 

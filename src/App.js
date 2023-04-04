@@ -1,11 +1,10 @@
-import "./App.scss";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import { GlobalStyle } from "./GlobalStyle.styles";
 import Home from "./pages/Home.page";
 import Layout from "./pages/Layout.page";
 
-function App() {
+const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -19,7 +18,12 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
-}
+  return (
+    <>
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </>
+  );
+};
 
 export default App;
