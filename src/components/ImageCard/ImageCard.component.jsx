@@ -7,7 +7,6 @@ import {
 } from "./imageCard.styles";
 
 const ImageCard = ({ image }) => {
-  console.log(image);
   return (
     <ImageCardContainer image={image}>
       <CardFooter>

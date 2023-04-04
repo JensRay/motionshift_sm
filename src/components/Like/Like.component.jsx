@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styles from "./like.module.scss";
+import { HeartLikeButton, LikeContainer } from "./like.styles";
 
 const Like = () => {
   const [liked, setLiked] = useState(false);
@@ -9,9 +9,9 @@ const Like = () => {
   };
 
   return (
-    <div class={styles.like_container} onClick={toggleHeart}>
-      <div class={`${styles.heart_like_button} ${liked && styles.liked}`}></div>
-    </div>
+    <LikeContainer onClick={toggleHeart}>
+      <HeartLikeButton className={liked && "liked"}></HeartLikeButton>
+    </LikeContainer>
   );
 };
 
