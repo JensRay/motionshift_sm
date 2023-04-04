@@ -1,12 +1,12 @@
-import "./utilities/_variables.styles";
-
 import { createGlobalStyle } from "styled-components";
+
+import { colors } from "./utilities/_variables.styles";
 
 export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     &:visited {
-      color: navy_blue;
+      color: ${colors.navy_blue};
     }
   }
 `;
