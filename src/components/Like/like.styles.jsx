@@ -22,12 +22,12 @@ export const HeartLikeButton = styled.div`
   height: 13px;
   &::before {
     position: absolute;
-    top: 0;
-    left: 8px;
+    top: -6px;
+    left: 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
-    width: 8px;
-    height: 12.5px;
+    width: 12px;
+    height: 18.75px;
     border-radius: 40px 40px 0 0;
     background-color: white;
     content: "";
@@ -36,12 +36,12 @@ export const HeartLikeButton = styled.div`
   }
   &::after {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -6px;
+    left: -11px;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
-    width: 8px;
-    height: 12.5px;
+    width: 12px;
+    height: 18.75px;
     border-radius: 40px 40px 0 0;
     background-color: white;
     content: "";

@@ -5,9 +5,8 @@ export const CardFooter = styled.div`
   position: absolute;
   bottom: 0;
   display: none;
-  margin-bottom: 15px;
-  width: 356px;
-  margin: 0 15px;
+  width: 346px;
+  margin: 0 20px;
 `;
 
 export const ImageCardContainer = styled.div`
