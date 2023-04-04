@@ -6,7 +6,7 @@ export const CardFooter = styled.div`
   bottom: 0;
   display: none;
   width: 346px;
-  margin: 0 20px;
+  margin: 0 20px 15px 20px;
 `;
 
 export const ImageCardContainer = styled.div`
