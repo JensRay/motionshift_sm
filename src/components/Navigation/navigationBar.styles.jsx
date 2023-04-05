@@ -10,18 +10,13 @@ export const NavigationContainer = styled.div`
   color: ${colors.navy_blue};
   align-items: center;
   border-bottom: 1px solid ${colors.gray_blue};
-  h3 {
-    font-weight: 500;
-  }
+  font-weight: 500;
 `;
 
 export const Logo = styled(Link)`
   width: 150px;
   align-self: center;
   margin-right: 20px;
-  img {
-    vertical-align: text-top;
-  }
 `;
 
 export const Links = styled.div`
@@ -33,10 +28,10 @@ export const Links = styled.div`
 export const Tabs = styled.div`
   display: flex;
   justify-content: space-evenly;
-  width: 200px;
+  width: 300px;
 `;
 
-export const Cta = styled.div`
+export const Profile = styled.div`
   align-self: center;
   background-color: ${colors.navy_blue};
   color: white;
@@ -44,6 +39,6 @@ export const Cta = styled.div`
   border-radius: 7px;
 
   h3 {
-    margin: 0;
+    /* margin: 0; */
   }
 `;

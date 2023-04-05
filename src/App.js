@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle.styles";
 import Home from "./pages/Home.page";
 import Layout from "./pages/Layout.page";
+import YourLikes from "./pages/YourLikes.page";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const App = () => {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/your_likes",
+          element: <YourLikes />,
         },
       ],
     },

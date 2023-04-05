@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
 import {
-  Cta,
   Links,
   Logo,
   NavigationContainer,
+  Profile,
   Tabs,
 } from "./navigationBar.styles";
 
@@ -17,14 +17,13 @@ const NavigationBar = () => {
       </Logo>
       <Links>
         <Tabs>
-          <Link to="/">
-            <h3>Home</h3>
-          </Link>
-          <h3>Blog</h3>
+          <Link to="/">Home</Link>
+          <Link to="/">Blog</Link>
+          <Link to="/your_likes">Your Likes</Link>
         </Tabs>
-        <Cta>
-          <h3>Log In</h3>
-        </Cta>
+        <Profile>
+          <Link to="/">Log In</Link>
+        </Profile>
       </Links>
     </NavigationContainer>
   );

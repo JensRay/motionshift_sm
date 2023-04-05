@@ -16,7 +16,7 @@ const Like = ({ image }) => {
       (likedImage) => likedImage.id === image.id
     );
     if (index === -1) {
-      addLikedImage({ id: image.id, liked: true });
+      addLikedImage({ ...image, liked: true });
     } else {
       removeLikedImage(image.id);
     }

@@ -1,13 +1,12 @@
-import data from "../../store/db.json";
 import ImageCard from "../ImageCard/ImageCard.component";
 import { ImagesGrid, ListContainer, MainContainer } from "./imagesList.styles";
 
-const ImagesList = () => {
+const ImagesList = ({ data }) => {
   return (
     <MainContainer>
       <ListContainer>
         <ImagesGrid>
-          {data.map((image) => {
+          {data?.map((image) => {
             return <ImageCard image={image} key={image.id} />;
           })}
         </ImagesGrid>
