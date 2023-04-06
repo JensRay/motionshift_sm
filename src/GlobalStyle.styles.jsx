@@ -7,4 +7,8 @@ export const GlobalStyle = createGlobalStyle`
       color: inherit;
     }
   }
+
+  li {
+    user-select: none;
+  }
 `;

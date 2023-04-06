@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
+import { distance, hexToRgb, PALETTE } from "../../utilities/color_helpers";
 import { shuffleArray, sortedObjects } from "../../utilities/functions";
 import ImageCard from "../ImageCard/ImageCard.component";
+import Palette from "../Palette/Palette.component";
 import {
   ImagesGrid,
   ListContainer,
@@ -9,29 +11,74 @@ import {
   SortingContainer,
 } from "./imagesList.styles";
 
-// For the needs of the project popular means made by the most frequent authors,
-// since there is no data(click, likes etc.)
-
 const ImagesList = ({ data }) => {
   const [activeTab, setActiveTab] = useState("");
-  const [items, setItems] = useState(data);
+  const [images, setImages] = useState(data);
+  const [showPalette, setShowPalette] = useState(false);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [filteredImages, setFilteredImages] = useState(images);
+
+  const nearestColor = useCallback(
+    (colorHex) =>
+      PALETTE.map((color) => color.hex).reduce(
+        (a, v, i, arr) =>
+          (a =
+            distance(hexToRgb(colorHex), hexToRgb(v)) < a[0]
+              ? [distance(hexToRgb(colorHex), hexToRgb(v)), v]
+              : a),
+        [Number.POSITIVE_INFINITY, PALETTE.map((color) => color.hex)[0]]
+      )[1],
+    []
+  );
+
+  // color_category would be in database, maybe added when a new photo is uploaded.
+
+  const addCategoryColorToImages = useCallback(() => {
+    return images.map((image) => ({
+      ...image,
+      color_category: nearestColor(image.avg_color),
+    }));
+  }, [images, nearestColor]);
+
+  useEffect(() => {
+    const updatedImages = addCategoryColorToImages();
+    setImages(updatedImages);
+  }, []);
 
   const handleShuffleClick = (tabTitle) => {
-    const shuffledItems = shuffleArray(items);
+    const shuffledItems = shuffleArray(images);
     setActiveTab(tabTitle);
-    setItems(shuffledItems);
+    setSelectedColor(null);
+    setImages(shuffledItems);
+    setShowPalette(false);
   };
+
+  // For the needs of the project popular means made by the most frequent authors,
+  // since there is no data(click, likes etc.)
 
   const handleSortPopular = (tabTitle) => {
-    const sorted = sortedObjects(items);
+    const sorted = sortedObjects(images);
     setActiveTab(tabTitle);
-    setItems(sorted);
-    console.log(sorted);
+    setSelectedColor(null);
+    setImages(sorted);
+    setShowPalette(false);
   };
 
-  const handleTabClick = (tabTitle) => {
+  const handleSortColor = (tabTitle) => {
     setActiveTab(tabTitle);
+    setShowPalette(!showPalette);
   };
+
+  useEffect(() => {
+    if (selectedColor) {
+      const newFilteredImages = images.filter(
+        (image) => image.color_category === selectedColor.hex
+      );
+      setFilteredImages(newFilteredImages);
+    } else {
+      setFilteredImages(images);
+    }
+  }, [selectedColor]);
 
   return (
     <MainContainer>
@@ -51,17 +98,27 @@ const ImagesList = ({ data }) => {
           </li>
           <li
             className={activeTab === "color" ? "active-tab" : ""}
-            onClick={() => handleTabClick("color")}
+            onClick={() => handleSortColor("color")}
           >
             Color
           </li>
         </ul>
+        {showPalette && (
+          <Palette
+            setSelectedColor={setSelectedColor}
+            setShowPalette={setShowPalette}
+          />
+        )}
       </SortingContainer>
       <ListContainer>
         <ImagesGrid>
-          {items?.map((image) => {
-            return <ImageCard image={image} key={image.id} />;
-          })}
+          {selectedColor && filteredImages
+            ? filteredImages?.map((image) => (
+                <ImageCard image={image} key={image.id} />
+              ))
+            : images?.map((image) => (
+                <ImageCard image={image} key={image.id} />
+              ))}
         </ImagesGrid>
       </ListContainer>
     </MainContainer>
