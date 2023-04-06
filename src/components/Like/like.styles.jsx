@@ -20,6 +20,7 @@ export const HeartLikeButton = styled.div`
   position: relative;
   width: 16px;
   height: 13px;
+
   &::before {
     position: absolute;
     top: -6px;

@@ -5,8 +5,14 @@ export const CardFooter = styled.div`
   position: absolute;
   bottom: 0;
   display: none;
-  width: 346px;
-  margin: 0 20px 15px 20px;
+  width: 95vw;
+  margin: 0px 15px;
+  @media (min-width: 768px) {
+    width: 38vw;
+  }
+  @media (min-width: 1200px) {
+    width: 25vw;
+  }
 `;
 
 export const ImageCardContainer = styled.div`

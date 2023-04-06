@@ -15,7 +15,24 @@ export const PaletteContainer = styled.div`
 `;
 
 export const Color = styled.div`
-  height: 20px;
-  width: 20px;
+  height: 6vw;
+  width: 6vw;
   cursor: pointer;
+
+  @media (min-width: 411px) {
+    height: 8vw;
+    width: 8vw;
+  }
+  @media (min-width: 768px) {
+    height: 3vw;
+    width: 3vw;
+  }
+  @media (min-width: 1024px) {
+    height: 2vw;
+    width: 2vw;
+  }
+  @media (min-width: 1200px) {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
 `;
