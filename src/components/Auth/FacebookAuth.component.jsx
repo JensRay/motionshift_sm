@@ -1,4 +1,4 @@
-import React, { history, useContext, useEffect } from "react";
+import React, { useNavigate, useContext, useEffect } from "react";
 
 import FacebookAuthContext from "../../context/FacebookAuthContext";
 import MetaApi from "./MetaApi.component";
@@ -40,7 +40,7 @@ const FacebookAuth = () => {
   useEffect(() => {
     const authUrl = `https://www.facebook.com/v16.0/dialog/oauth?client_id=${process.env.REACT_APP_FACEBOOK_APP_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=ads_read&state=facebookLoggedIn=${facebookLoggedIn}`;
     if (!facebookLoggedIn) {
-      history.push(authUrl);
+      useNavigate.push(authUrl);
     }
   }, [facebookLoggedIn]);
 
