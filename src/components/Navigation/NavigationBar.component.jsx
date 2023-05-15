@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect, useState } from "react";
 
 import logo from "../../assets/logo.svg";
-import fb_logo from "../../assets/icons8-facebook.svg";
+import fb_logo from "../../assets/fb_logo.svg";
 import FacebookAuthContext from "../../context/FacebookAuthContext";
 import FacebookAuth from "../Auth/FacebookAuth.component";
 import {
