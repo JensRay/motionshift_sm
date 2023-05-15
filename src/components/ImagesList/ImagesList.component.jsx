@@ -47,7 +47,7 @@ const ImagesList = ({ data }) => {
   useEffect(() => {
     const updatedImages = addCategoryColorToImages();
     setImages(updatedImages);
-  }, [addCategoryColorToImages]);
+  }, []);
 
   const handleShuffleClick = (tabTitle) => {
     const shuffledItems = shuffleArray(images);
@@ -80,7 +80,7 @@ const ImagesList = ({ data }) => {
     } else {
       setFilteredImages(images);
     }
-  }, [selectedColor, images]);
+  }, [selectedColor]);
 
   return (
     <MainContainer>
