@@ -58,6 +58,7 @@ const NavigationBar = () => {
             >
               <img src={fb_logo} alt="facebook logo" />
               <span>Login with Facebook</span>
+              <span>test</span>
             </LastTabLink>
           )}
         </Tabs>
