@@ -1,4 +1,5 @@
-import React, { useNavigate, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import FacebookAuthContext from "../../context/FacebookAuthContext";
 import MetaApi from "./MetaApi.component";
