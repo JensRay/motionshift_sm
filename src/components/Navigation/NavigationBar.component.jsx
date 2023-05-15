@@ -1,6 +1,6 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import logo from "../../assets/logo.svg";
 import fb_logo from "../../assets/fb_logo.svg";
@@ -18,14 +18,14 @@ import {
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogging, setIsLogging] = useState(false);
+  // const [isLogging, setIsLogging] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const { facebookLoggedIn, setFacebookLoggedIn } =
     useContext(FacebookAuthContext);
 
   const authenticate = () => {
-    setIsLogging(true);
+    // setIsLogging(true);
     setFacebookLoggedIn(true);
   };
 
