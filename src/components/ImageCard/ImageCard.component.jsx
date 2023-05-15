@@ -11,7 +11,7 @@ const ImageCard = ({ image }) => {
     <ImageCardContainer image={image}>
       <CardFooter>
         <CardData>
-          <Author>{image.photographer}</Author>
+          <Author>{image.author}</Author>
           <Like image={image} />
         </CardData>
       </CardFooter>

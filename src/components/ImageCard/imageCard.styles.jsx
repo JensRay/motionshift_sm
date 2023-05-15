@@ -22,6 +22,7 @@ export const ImageCardContainer = styled.div`
   position: relative;
   color: white;
   background-image: url(${(props) => props.image.url});
+  /* filter: brightness(70%); */
 
   &::before {
     content: "";
@@ -31,16 +32,16 @@ export const ImageCardContainer = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
+    /* opacity: 0; */
     transition: opacity 0.2s;
   }
 
   &:hover::before {
-    opacity: 1;
+    /* opacity: 1; */
   }
 
   &:hover {
-    background-color: black;
+    /* background-color: black; */
     ${CardFooter} {
       display: block;
     }

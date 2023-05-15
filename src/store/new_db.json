@@ -1,0 +1,50 @@
+[
+  {
+    "id": 123123123,
+    "url": "https://images.pexels.com/photos/15955945/pexels-photo-15955945.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "author": "Eugenia Remark",
+    "platform": "Facebook",
+    "industry": "Food and beverages",
+    "media_type": "photo",
+    "status": "active",
+    "impressions": 123123,
+    "language": "EN",
+    "avg_color": "#A49880"
+  },
+  {
+    "id": 423523425,
+    "url": "https://images.pexels.com/photos/15954328/pexels-photo-15954328.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "author": "Artūras Kokorevas",
+    "platform": "Facebook",
+    "industry": "Technology",
+    "media_type": "photo",
+    "status": "active",
+    "impressions": 45667,
+    "language": "EN",
+    "avg_color": "#A49880"
+  },
+  {
+    "id": 8536743,
+    "url": "https://images.pexels.com/photos/15954341/pexels-photo-15954341.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "author": "Artūras Kokorevas",
+    "platform": "Instagram",
+    "industry": "Travelling",
+    "media_type": "photo",
+    "status": "active",
+    "impressions": 65435,
+    "language": "EN",
+    "avg_color": "#A49880"
+  },
+  {
+    "id": 298473,
+    "url": "https://images.pexels.com/photos/15948114/pexels-photo-15948114.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "author": "Gülru Sude",
+    "platform": "Facebook",
+    "industry": "Fasion",
+    "media_type": "photo",
+    "status": "inactive",
+    "impressions": 654375342,
+    "language": "EN",
+    "avg_color": "#A49880"
+  }
+]

@@ -9,18 +9,18 @@ export function shuffleArray(array) {
   return shuffled;
 }
 
-// Two functions sorting from images with the post frequent authors.
+// Two functions sorting images with the most impressions.
 
 export function nameCounts(objects) {
   return objects.reduce((acc, obj) => {
-    acc[obj.photographer] = (acc[obj.photographer] || 0) + 1;
+    acc[obj.impressions] = (acc[obj.impressions] || 0) + 1;
     return acc;
   }, {});
 }
 
 export function sortedObjects(objects) {
-  const counts = nameCounts(objects);
+  // const counts = nameCounts(objects);
   return objects.sort(
-    (a, b) => counts[b.photographer] - counts[a.photographer]
+    (a, b) => objects[b.impressions] - objects[a.impressions]
   );
 }

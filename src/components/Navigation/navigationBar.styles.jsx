@@ -35,7 +35,7 @@ export const MenuButton = styled.button`
 `;
 
 export const Links = styled.div`
-  width: 100%;
+  width: 1050px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -74,11 +74,13 @@ export const TabLink = styled(Link)`
 `;
 
 export const LastTabLink = styled(Link)`
-  background: ${colors.navy_blue};
+  background: ${colors.facebook_blue};
   color: white;
-  padding: 5px 10px;
+  padding: 7px 10px;
   border-radius: 7px;
   margin-left: auto;
+  display: flex;
+  align-items: center;
 
   &:visited {
     color: white;
@@ -87,6 +89,10 @@ export const LastTabLink = styled(Link)`
     margin: 12px 0;
     font-size: 24px;
     padding: 0;
+  }
+
+  img {
+    margin-right: 5px;
   }
 `;
 

@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 
+import FacebookAuthContext from "../../context/FacebookAuthContext";
 import { distance, hexToRgb, PALETTE } from "../../utilities/color_helpers";
 import { shuffleArray, sortedObjects } from "../../utilities/functions";
+import MetaApi from "../Auth/MetaApi.component";
 import ImageCard from "../ImageCard/ImageCard.component";
 import Palette from "../Palette/Palette.component";
 import {
@@ -17,6 +19,8 @@ const ImagesList = ({ data }) => {
   const [showPalette, setShowPalette] = useState(false);
   const [selectedColor, setSelectedColor] = useState(null);
   const [filteredImages, setFilteredImages] = useState(images);
+
+  const { facebookLoggedIn } = useContext(FacebookAuthContext);
 
   const nearestColor = useCallback(
     (colorHex) =>
@@ -53,11 +57,9 @@ const ImagesList = ({ data }) => {
     setShowPalette(false);
   };
 
-  // For the needs of the project popular means made by the most frequent authors,
-  // since there is no data(click, likes etc.)
-
   const handleSortPopular = (tabTitle) => {
     const sorted = sortedObjects(images);
+    console.log(sorted);
     setActiveTab(tabTitle);
     setSelectedColor(null);
     setImages(sorted);
@@ -82,6 +84,7 @@ const ImagesList = ({ data }) => {
 
   return (
     <MainContainer>
+      <MetaApi />
       <SortingContainer>
         <ul>
           <li
@@ -102,6 +105,30 @@ const ImagesList = ({ data }) => {
           >
             Color
           </li>
+          <li
+            className={activeTab === "platform" ? "active-tab" : ""}
+            onClick={() => handleSortColor("platform")}
+          >
+            Platform
+          </li>
+          <li
+            className={activeTab === "media_type" ? "active-tab" : ""}
+            onClick={() => handleSortColor("media_type")}
+          >
+            Media Type
+          </li>
+          <li
+            className={activeTab === "color" ? "active-tab" : ""}
+            onClick={() => handleSortColor("color")}
+          >
+            Color
+          </li>
+          <li
+            className={activeTab === "color" ? "active-tab" : ""}
+            onClick={() => handleSortColor("color")}
+          >
+            Color
+          </li>
         </ul>
         {showPalette && (
           <Palette
@@ -112,7 +139,7 @@ const ImagesList = ({ data }) => {
       </SortingContainer>
       <ListContainer>
         <ImagesGrid>
-          {selectedColor && filteredImages
+          {selectedColor && filteredImages && facebookLoggedIn
             ? filteredImages?.map((image) => (
                 <ImageCard image={image} key={image.id} />
               ))

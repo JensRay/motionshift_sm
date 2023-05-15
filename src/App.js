@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import FacebookAuthProvider from "./context/FacebookAuthProvider";
 import { GlobalStyle } from "./GlobalStyle.styles";
 import Home from "./pages/Home.page";
 import Layout from "./pages/Layout.page";
@@ -24,10 +25,10 @@ const App = () => {
   ]);
 
   return (
-    <>
+    <FacebookAuthProvider>
       <GlobalStyle />
       <RouterProvider router={router} />
-    </>
+    </FacebookAuthProvider>
   );
 };
 
