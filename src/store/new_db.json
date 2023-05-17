@@ -4,7 +4,7 @@
     "url": "https://images.pexels.com/photos/15955945/pexels-photo-15955945.jpeg?auto=compress&cs=tinysrgb&h=350",
     "author": "Eugenia Remark",
     "platform": "Facebook",
-    "industry": "Food and beverages",
+    "industry": "Food & beverage",
     "media_type": "photo",
     "status": "active",
     "impressions": 123123,
@@ -44,7 +44,7 @@
     "media_type": "photo",
     "status": "inactive",
     "impressions": 654375342,
-    "language": "EN",
+    "language": "DE",
     "avg_color": "#A49880"
   }
 ]

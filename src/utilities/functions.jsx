@@ -11,16 +11,28 @@ export function shuffleArray(array) {
 
 // Two functions sorting images with the most impressions.
 
-export function nameCounts(objects) {
-  return objects.reduce((acc, obj) => {
-    acc[obj.impressions] = (acc[obj.impressions] || 0) + 1;
-    return acc;
-  }, {});
+export function sortPopular(objects) {
+  return objects.sort((a, b) => b.impressions - a.impressions);
 }
 
-export function sortedObjects(objects) {
-  // const counts = nameCounts(objects);
-  return objects.sort(
-    (a, b) => objects[b.impressions] - objects[a.impressions]
-  );
+// export function filterObjects(objects, value) {
+//   objects.filter(object => object.value === )
+// }
+
+export function filterObjects(objects, selectedOptions, tabTitle) {
+  return objects.filter((object) => selectedOptions.includes(object[tabTitle]));
 }
+
+// export function nameCounts(objects) {
+//   return objects.reduce((acc, obj) => {
+//     acc[obj.impressions] = (acc[obj.impressions] || 0) + 1;
+//     return acc;
+//   }, {});
+// }
+
+// export function sortedObjects(objects) {
+//   // const counts = nameCounts(objects);
+//   return objects.sort(
+//     (a, b) => objects[b.impressions] - objects[a.impressions]
+//   );
+// }

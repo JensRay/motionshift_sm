@@ -1,10 +1,10 @@
 import { PALETTE } from "../../utilities/color_helpers";
 import { Color, PaletteContainer } from "./Palette.styles";
 
-const Palette = ({ setSelectedColor, setShowPalette }) => {
+const Palette = ({ setSelectedColor, setShowOptions }) => {
   const handleColorSelect = (color) => {
     setSelectedColor(color);
-    setShowPalette(false);
+    setShowOptions("");
   };
 
   return (
